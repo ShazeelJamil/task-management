@@ -1,0 +1,41 @@
+﻿.task-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #300c4d;
+    margin-bottom: 10px;
+    border-radius: 20px;
+}
+    .task-item:hover {
+        background: #e5e5e5;
+    }
+    .task-details {
+        flex-grow: 1;
+    }
+
+.task-actions {
+    display: flex;
+    gap: 10px;
+}
+
+    .task-actions .btn {
+        min-width: 80px;
+    }
+
+@media (max-width:977px) {
+    .task-list{
+        width: 80% !important;
+
+    }
+    .task-item {
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+    }
+}

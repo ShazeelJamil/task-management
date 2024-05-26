@@ -1,0 +1,67 @@
+﻿@page "/"
+@rendermode InteractiveServer
+
+<PageTitle>All Tasks</PageTitle>
+
+<div class="d-flex align-items-center align-content-center flex-column position-relative">
+    <h1>All Tasks</h1>
+
+    @if (isLoading)
+    {
+        <div class="loader-overlay">
+            <div class="loader"></div>
+        </div>
+    }
+    @if (TaskList.Count < 1)
+    {
+        <h3>No Tasks</h3>
+    }
+    else
+    {
+        <div class="task-list w-50">
+            @foreach (var task in TaskList)
+            {
+                <div class="task-item">
+                    <div class="task-details" @onclick="() => OpenDetailsAsync(task)">
+                        <h4>@task.title</h4>
+                        <p>@task.description</p>
+                        <p>Status: @task.status</p>
+                    </div>
+                    <div class="task-actions">
+                        <button class="btn btn-danger" @onclick="() => DeleteTask(task.id)">Delete</button>
+                        <button class="btn btn-primary" @onclick="() => OpenInEditMode(task.id)">Edit</button>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Task Details</h5>
+            </div>
+            <div class="modal-body">
+                <h3>@Selected_Model.title</h3>
+                <p>@Selected_Model.description</p>
+                <p>@Selected_Model.status</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" @onclick="() => OpenInEditMode(Selected_Model.id)">Edit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@* Script to Open the details in a Model/PopUp *@
+<script>
+    function showModal() {
+        $('#exampleModalCenter').modal('show');
+    }
+
+</script>

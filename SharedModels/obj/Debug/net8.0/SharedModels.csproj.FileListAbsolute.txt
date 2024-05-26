@@ -1,0 +1,11 @@
+D:\Workspace\SharedModels\bin\Debug\net8.0\SharedModels.deps.json
+D:\Workspace\SharedModels\bin\Debug\net8.0\SharedModels.dll
+D:\Workspace\SharedModels\bin\Debug\net8.0\SharedModels.pdb
+D:\Workspace\SharedModels\obj\Debug\net8.0\SharedModels.GeneratedMSBuildEditorConfig.editorconfig
+D:\Workspace\SharedModels\obj\Debug\net8.0\SharedModels.AssemblyInfoInputs.cache
+D:\Workspace\SharedModels\obj\Debug\net8.0\SharedModels.AssemblyInfo.cs
+D:\Workspace\SharedModels\obj\Debug\net8.0\SharedModels.csproj.CoreCompileInputs.cache
+D:\Workspace\SharedModels\obj\Debug\net8.0\SharedModels.dll
+D:\Workspace\SharedModels\obj\Debug\net8.0\refint\SharedModels.dll
+D:\Workspace\SharedModels\obj\Debug\net8.0\SharedModels.pdb
+D:\Workspace\SharedModels\obj\Debug\net8.0\ref\SharedModels.dll

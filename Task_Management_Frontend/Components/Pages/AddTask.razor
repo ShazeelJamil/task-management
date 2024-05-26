@@ -1,0 +1,48 @@
+﻿@page "/addTask/{TaskId:guid?}"
+@rendermode InteractiveServer
+
+<PageTitle>Add Task</PageTitle>
+
+<div class="d-flex align-items-center align-content-center flex-column position-relative">
+    <h1>@(TaskId.HasValue ? "Edit Task" : "Add New Task")</h1>
+
+    @if (isLoading)
+    {
+        <div class="loader-overlay">
+            <div class="loader"></div>
+        </div>
+    }
+
+    <form @onsubmit="HandleValidSubmit" class="w-75 d-flex gap-4 flex-column">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input id="title" class="form-control" @bind="newTask.title" required />
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description" class="form-control" @bind="newTask.description"></textarea>
+        </div>
+
+        <label>Status</label>
+        <div class="form-group d-flex gap-4">
+            <div>
+                <input type="radio" id="complete" name="status" value="Complete" @onchange="e => newTask.status = TaskStatus.Complete.ToString()" />
+                <label for="complete">Complete</label>
+            </div>
+            <div>
+                <input type="radio" id="pending" name="status" value="Pending" @onchange="e => newTask.status = TaskStatus.Pending.ToString()" />
+                <label for="pending">Pending</label>
+            </div>
+            <div>
+                <input type="radio" checked id="inprogress" name="status" value="InProgress" @onchange="e => newTask.status = TaskStatus.InProgress.ToString()" />
+                <label for="inprogress">In Progress</label>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary w-25">@(TaskId.HasValue ? "UpdateTask" : "Add Task")</button>
+        </div>
+    </form>
+
+</div>

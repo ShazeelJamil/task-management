@@ -1,0 +1,41 @@
+.task-list[b-fkfvfyjzr0] {
+    display: flex;
+    flex-direction: column;
+}
+
+.task-item[b-fkfvfyjzr0] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #300c4d;
+    margin-bottom: 10px;
+    border-radius: 20px;
+}
+    .task-item:hover[b-fkfvfyjzr0] {
+        background: #e5e5e5;
+    }
+    .task-details[b-fkfvfyjzr0] {
+        flex-grow: 1;
+    }
+
+.task-actions[b-fkfvfyjzr0] {
+    display: flex;
+    gap: 10px;
+}
+
+    .task-actions .btn[b-fkfvfyjzr0] {
+        min-width: 80px;
+    }
+
+@media (max-width:977px) {
+    .task-list[b-fkfvfyjzr0]{
+        width: 80% !important;
+
+    }
+    .task-item[b-fkfvfyjzr0] {
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+    }
+}
